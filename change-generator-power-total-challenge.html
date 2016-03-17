@@ -14,25 +14,23 @@ function changePowerTotal(totalGenPowerNum,genIdNum,genStatusStr,currentGenPower
   var currentGenPowerNum=62;
 
   for(var genIdNum=1;genIdNum<=totalGens;genIdNum++){
+    //Conditionals turn even gens "on" and odd gens "off".
     if(genIdNum%2==0){
       genStatusStr=="On";
     } else {
       genStatusStr=="Off";
     }
-    /*
+  }
+    return totalGenPowerNum;
+
     if(genStatusStr=="On"){
       totalGenPowerNum+=currentGenPowerNum;
       alert("Generator #"+genIdNum+" is now on, adding "+currentGenPowerNum+"MW, for a total of  "+totalGenPowerNum+" MW!");
-
     } else {
         totalGenPowerNum-=currentGenPowerNum;
         alert("Generator #"+genIdNum+" is now off, removing "+currentGenPowerNum+"MW, for a total of  "+totalGenPowerNum+" MW!");
-
-    }*/
-    return totalGenPowerNum;
+      }
   }
-
-}
 
 </script>
 </body>
