@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <title>Testing Code</title>
+</head>
+
+<body>
+<script>
+function changePowerTotal(totalGenPowerNum,genIdNum,genStatusStr,currentGenPowerNum) {
+
+  var totalGens=19;
+  var totalGenPowerNum=0;
+  var currentGenPowerNum=62;
+
+  for(var genIdNum=1;genIdNum<=totalGens;genIdNum++){
+    if(genIdNum%2==0){
+      genStatusStr=="On";
+    } else {
+      genStatusStr=="Off";
+    }
+    /*
+    if(genStatusStr=="On"){
+      totalGenPowerNum+=currentGenPowerNum;
+      alert("Generator #"+genIdNum+" is now on, adding "+currentGenPowerNum+"MW, for a total of  "+totalGenPowerNum+" MW!");
+
+    } else {
+        totalGenPowerNum-=currentGenPowerNum;
+        alert("Generator #"+genIdNum+" is now off, removing "+currentGenPowerNum+"MW, for a total of  "+totalGenPowerNum+" MW!");
+
+    }*/
+    return totalGenPowerNum;
+  }
+
+}
+
+</script>
+</body>
+</html>
