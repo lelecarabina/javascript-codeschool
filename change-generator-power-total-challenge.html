@@ -9,23 +9,15 @@
 <script>
 function changePowerTotal(totalGenPowerNum,genIdNum,genStatusStr,currentGenPowerNum) {
 
-  var totalGenPowerNum=0;
-  var currentGenPowerNum=62;
-  var genStatusStr=" ";
-  var genIdNum=2;
+  if(genStatusStr==="on"){
+    totalGenPowerNum+=currentGenPowerNum;
+    alert("Generator #"+genIdNum+" is now "+genStatusStr+", adding "+currentGenPowerNum+" MW, for a total of  "+totalGenPowerNum+" MW!");
 
-  genStatusStr="On";
-
-  if(genStatusStr==="On"){
-    return totalGenPowerNum+=currentGenPowerNum;
-    alert("Generator #"+genIdNum+" is now on, adding "+currentGenPowerNum+" MW, for a total of  "+totalGenPowerNum+" MW!");
-
-    genStatusStr="Off";
-
-  } else if(genStatusStr==="Off"){
-      return totalGenPowerNum-=currentGenPowerNum;
-      alert("Generator #"+genIdNum+" is now off, removing "+currentGenPowerNum+" MW, for a total of  "+totalGenPowerNum+" MW!");
+  } else if(genStatusStr==="off"){
+      totalGenPowerNum-=currentGenPowerNum;
+      alert("Generator #"+genIdNum+" is now "+genStatusStr+", removing "+currentGenPowerNum+" MW, for a total of  "+totalGenPowerNum+" MW!");
     }
+    return totalGenPowerNum;
   }
 
 </script>
