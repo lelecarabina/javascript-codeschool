@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <title>Fear Dogwoods</title>
+</head>
+
+<body>
+    <h1>Using Function Expressions with Parameters</h1>
+
+<p>
+1. Analyze the fearGenerated formula.<br />
+2. Assign appropriate values to the people, rain, and sharks variables so that the amount of fear generated will be no less than 100, but no more than 400.<br />
+3. Call the fearGenerated function and pass in the variables as arguments.<br />
+4. Store the result of that function in a new variable called fear.<br />
+Note: You do not need to change the existing fearGenerated function.
+</p>
+
+<script>
+var people = 80;
+var rain = 3;
+var sharks = 3;
+
+var fearGenerated = function(numPeeps, rainInInches, numSharks) {//numPeeps=people, rainInInches=rain, numSharks=sharks
+  var rainFear = numPeeps * rainInInches;
+  var sharkFear = numSharks * numSharks * numSharks;
+  var totalFear = sharkFear + rainFear;
+  return totalFear;
+};
+
+console.log(fearGenerated(people,rain,sharks));//numPeeps=people, rainInInches=rain, numSharks=sharks
+
+//alert(fearGenerated);//no () after function name
+
+/*Another exercise*/
+var fear = fearGenerated(numPeeps, rainInInches, numSharks);
+
+var fearMessage = function() {
+  if(fear<200){
+    return confirm("Fear Level: LOW\n"+"Still wanna ride?");
+  } else if (fear>=200&&fear<=300) {
+    return confirm("Fear Level: MEDIUM\n"+"Think you'll make it?");
+  }
+
+};
+
+function confirmRide(confirmToGo) {
+  return confirmToGo();
+}
+
+var startRide=confirmRide(fearMessage);
+
+
+</script>
+
+</body>
+</html>
