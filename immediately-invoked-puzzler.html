@@ -5,46 +5,46 @@
   <meta charset="utf-8">
   <title>Immediateli-Invoked Puzzler</title>
 </head>
-
 <body>
-
   <h1>Immediateli-Invoked Puzzler</h1>
-
-  <p>Now the Poplar Puzzle-makers have sent you a puzzle with a new set of functions to use on that puzzle. To display your overwhelming array and function expression mastery, alert the answer to the following question:</p>
-
+  <p>Alert the answer to the following question:</p>
     <quote>“What is obtained when the result of passing 9 into the fourth function of the puzzlers array is then passed into the function whose array index matches the result of passing 3 into the second function of the puzzlers array?”</quote>
-
   <p>To really impress them, the expression used in your alert should:</p>
-
     <ol>
       <li>Use just one line of code.</li>
       <li>Involve no manual calculation or hard-coded math on your part.</li>
       <li>Use indices of arrays to access functions.</li>
       <li>Use parentheses to pass in parameters to immediately-invoking functions.</li>
     </ol>
-
   <h4>Note:</h4>
-
   <ul>
     <li>The required answer is not an example of good style, nor is it intended as such.</li>
-
     <li>The main point is to give you practice with the mechanics of arrays and function calls.</li>
 
 <script>
-
 var puzzlers = [
   function(a) { return 8 * a - 10; },
   function(a) { return (a - 3) * (a - 3) * (a - 3); },
   function(a) { return a * a + 4; },
   function(a) { return a % 5; }
 ];
-
 alert(puzzlers[puzzlers[1](3)](puzzlers[3](9)));
 
-//Your outermost call to puzzlers should have another call to puzzlers IN the index brackets, as well a third call to puzzlers in the returned function's parameter parentheses.
+/*Your outermost call to puzzlers should have another call to puzzlers IN the index brackets:
 
-//If you try to put parameters in an array index, it will get resolved as a multiplication expression. Yikes!
+alert(
 
-</script>
-</body>
-</html>
+
+puzzlers[puzzlers[1](3)]
+
+
+As well a third call to puzzlers in the returned function's parameter parentheses:
+
+
+(puzzlers[3](9))
+
+
+);
+
+If you try to put parameters in an array index, it will get resolved as a multiplication expression. Yikes!*/
+</script></body></html>
