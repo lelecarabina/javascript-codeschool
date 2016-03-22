@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <title>Queue</title>
+</head>
+
+<body>
+
+  <h1>Queue Builder</h1>
+
+  <p>The devs at Poplar Puzzles would like you to treat an array of functions like a Queue, passing the result of each function into the next until the Queue is empty. They’ve sent you the puzzlers Queue of functions, and the following instructions:</p>
+
+    <ol>
+      <li>Build a function and assign it to a variable named applyAndEmpty.</li>
+      <li>The function should take in an input number and a queue of functions as parameters.</li>
+      <li>Using a for loop, call the functions in the queue in order with the input number, where the results of each function becomes the next function’s input.</li>
+      <li>Once done this loop, return from applyAndEmpty the final function’s result. Additionally, the queue should be empty at this point.</li>
+      <li>Lastly, call the applyAndEmpty function using the provided start variable and the puzzlers Queue as arguments, and alert the result.</li>
+    </ol>
+  </p>
+
+<script>
+
+var puzzlers = [
+  function(a) { return 8 * a - 10; },
+  function(a) { return (a - 3) * (a - 3) * (a - 3); },
+  function(a) { return a * a + 4; },
+  function(a) { return a % 5; }
+];
+
+var start = 2;
+
+// build applyAndEmpty function expression here
+var applyAndEmpty=function(input,queue){
+  for(var i=0,max=queue.length;i<max;i++){//max is required here
+    input=queue.shift()(input);
+    //immediately invoke "queue" using () with "input" as an argument
+  }
+  return input;
+};
+
+alert(applyAndEmpty(start,puzzlers));
+
+//I got all the syntax correct, did not get the logics in the for loop and function, though. TOUGH ONE!
+</script>
+</body>
+</html>
