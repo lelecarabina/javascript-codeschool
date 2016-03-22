@@ -30,10 +30,28 @@ function buildTicket(allRides,passRides,customerPick){
   }
 }
 
-buildTicket(parkRides,fastPassQueue,wantsRide);
+console.log(buildTicket(parkRides,fastPassQueue,wantsRide)());
 
-console.log(buildTicket());
+//OR
 
+/*
+function buildTicket(allRides,passRides,customerPick){
+  if(parkRides[0]==wantsRide){
+    var pass=parkRides.shift();
+    return function(){alert("Fast Pass to "+pass+".")}
+  } else {
+    for(var i=0;i<parkRides.length;i++){
+      if(parkRides[i][0]==wantsRide){
+        return function(){
+          alert("Printing tickt for "+wantsRide+".\n"+"Wait time "+parkRides[i][1]+" minutes.");
+        };
+      }
+    }
+  }
+}
+
+console.log(buildTicket(parkRides,fastPassQueue,wantsRide)());
+*/
 </script>
 </body>
 </html>
