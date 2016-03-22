@@ -36,7 +36,7 @@ var start = 2;
 var applyAndEmpty=function(input,queue){
   for(var i=0,max=queue.length;i<max;i++){//max is required here
     input=queue.shift()(input);
-    //immediately invoke "queue" using () with "input" as an argument
+    //immediately invoked "queue" using () with "input" as an argument
   }
   return input;
 };
